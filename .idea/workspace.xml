@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="84fe5e92-3978-4dba-857a-044487c5df06" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1WF8NH7BLzRD1YHTKAwxjRHWofy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/blog/static/blog" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Django\Django_PortFolio\board_django\env_board\board\blog\templates\registration" />
+      <recent name="E:\Django\Django_PortFolio\board_django\env_board\board\blog\templates\blog" />
+      <recent name="E:\Django\Django_PortFolio\board_django\env_board\board\blog\static\blog" />
+      <recent name="E:\Django\Django_PortFolio\board_django\env_board\board\blog\static\scripts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Django\Django_PortFolio\board_django\env_board\board\blog\static\blog" />
+    </key>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84fe5e92-3978-4dba-857a-044487c5df06" name="Default Changelist" comment="" />
+      <created>1578733940155</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1578733940155</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="0" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1578821891054">
+      <screen x="0" y="0" width="1920" height="1019" />
+    </state>
+    <state x="0" y="165" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1019@0.0.1920.1019" timestamp="1578821891054" />
+    <state x="807" y="216" key="FileChooserDialogImpl" timestamp="1579006158334">
+      <screen x="0" y="0" width="1920" height="1019" />
+    </state>
+    <state x="807" y="216" key="FileChooserDialogImpl/0.0.1920.1019@0.0.1920.1019" timestamp="1579006158334" />
+    <state x="0" y="152" key="SettingsEditor" timestamp="1578734938260">
+      <screen x="0" y="0" width="1920" height="1019" />
+    </state>
+    <state x="0" y="152" key="SettingsEditor/0.0.1920.1019@0.0.1920.1019" timestamp="1578734938260" />
+    <state x="179" y="334" key="com.intellij.ide.util.TipDialog" timestamp="1579002183211">
+      <screen x="0" y="0" width="1920" height="1019" />
+    </state>
+    <state x="179" y="334" key="com.intellij.ide.util.TipDialog/0.0.1920.1019@0.0.1920.1019" timestamp="1579002183211" />
+    <state x="143" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1578748085653">
+      <screen x="0" y="0" width="1920" height="1019" />
+    </state>
+    <state x="143" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1019@0.0.1920.1019" timestamp="1578748085653" />
+  </component>
+</project>
