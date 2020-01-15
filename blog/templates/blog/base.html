@@ -16,9 +16,17 @@
             </a>
             <p>Hello {{ user.username }}!</p>
             <a href="{% url 'logout' %}?next=/" class="top-menu">
+                <p>Logout</p>
                 <span class="glyphicon glyphicon-log-out"></span>
             </a>
         {% else %}
+            {% block signup_content %}
+            <a href="{% url 'signup' %}" class="top-menu">
+                <p>Sign Up</p>
+                <span class="glyphicon glyphicon-log-in"></span>
+            </a>
+            {% endblock %}
+
             {% block login_content %}
             <a href="{% url 'login' %}" class="top-menu">
                 <p>Login</p>
@@ -32,6 +40,7 @@
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
+
                 {% block content %}
                 {% endblock %}
             </div>

@@ -4,8 +4,6 @@ from . import views
 from django.contrib import admin
 from django.views.generic.base import TemplateView # new
 
-
-
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
     # 1회 이상 반복 : pk
@@ -16,5 +14,9 @@ urlpatterns = [
     url(r'^post/new/$', views.post_new, name='post_new'),
     url(r'^post/(?P<pk>\d+)/edit/$', views.post_edit, name='post_edit'),
     url(r'^post/(?P<pk>\d+)/delete/$', views.post_delete, name='post_delete'),
-    url(r'', TemplateView.as_view(template_name='base.html'), name='base'),  # new
+
+    # When users have logged on to the site, go back to base.html.
+    # url(r'^accounts/', include('django.contrib.auth.urls')),
+    url(r'^signup/', views.SignUp.as_view(), name='signup'),
+    url(r'', TemplateView.as_view(template_name='base.html'), name='base'),
 ]
