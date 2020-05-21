@@ -25,7 +25,7 @@ SECRET_KEY = 'x45#90_jeup$ju++c!!g#xirpn%fhbxcg5%iprqyymtmy_xjo#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -43,7 +43,9 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -52,6 +54,17 @@ MIDDLEWARE_CLASSES = (
 )
 
 ROOT_URLCONF = 'board.urls'
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#         # 'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+#         'LOCATION': ['127.0.0.1:8000'],
+#         # 'LOCATION': 'E:\Django\Django_PortFolio\\board_django\\env_board\\board\\board\django_cache',
+#         'TIMEOUT': 60,
+#         'OPTIONS': {'MAX_ENTRIES': 1000}
+#     }
+# }
 
 TEMPLATES = [
     {
@@ -100,7 +113,37 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
+# In Github and Pycharm Codes, STATIC_URL content isn't same.
+# Because Github cochrodes stands for set Website already got Domain.
+# And Pycharm code is just working on LocalHost.
+
+# Like example, STATIC_URL is
 STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_REDIRECT_URL = 'base'
+# LOGIN_URL = '/post/login/'
+
+# EMAIL_BACKEND = "django_smtp_ssl.SSLEmailBackend"
+EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_USE_TLS = True
+# EMAIL_PORT = 1025
+# EMAIL_HOST_USER = 'kdsnop@gmail.com'
+# EMAIL_HOST_PASSWORD = 'kds0121004!'
+
+# LOGIN_EXEMPT_URLS = (
+#     r'^post/password_reset/$',
+#     r'^post/password_reset_done/$',
+#
+#     r'^post/reset/MQ/(?P<uidb64>[0-9A-Za-z]+)-(?P<token>.+)/$',
+#     r'^post/reset/complete/$',
+# )
+
+# EMAIL_HOST = '127.0.0.1:8020'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# DEFAULT_FROM_EMAIL = 'kdsnop@gmail.com'
+# MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'

@@ -5,21 +5,62 @@
     <title>{% block title %} {% endblock %}</title>
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext"  type="text/css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" type="text/css">
     <link rel="stylesheet" href="{% static 'blog/blog.css' %}"/>
+    <script src="jquery-3.4.1.min.js"></script>
+    <!--  Google CDN  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--  Microsoft CDN  -->
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        function getCookie(name){
+            var cookieValue = null;
+            if(document.cookie && document.cookie != ''){
+                var cookies = document.cookie.split(';');
+                for(var i = 0; i < cookies.length; i++){
+                    var cookie = jQuery.trim(cookies[i]);
+                    if(cookie.substring(0, name.length + 1) == (name + '=')){
+                        cookieValue =
+                        decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+                return cookieValue;
+            }
+            var csrftoken = getCookie('csrftoken');
+        }
+    </script>
+    <style>
+        .a {font-family: Georgia; font-size: 20px; color: #FAEBD7;}
+    </style>
 </head>
 <body>
     <div class="page-header">
         {% if user.is_authenticated %}
+            <a href="https://test-0605.herokuapp.com">
+                <span class="glyphicon glyphicon-chevron-up" aria-hidden="true"></span>
+            </a>
             <a href="{% url 'post_new' %}" class="top-menu">
                 <span class="glyphicon glyphicon-plus"></span>
             </a>
-            <p>Hello {{ user.username }}!</p>
-            <a href="{% url 'logout' %}?next=/" class="top-menu">
-                <p>Logout</p>
-                <span class="glyphicon glyphicon-log-out"></span>
+            {% block change_password_content %}
+            <a href="{% url 'change_password' %}" class="top-menu">
+                <span class="glyphicon glyphicon-repeat"></span>
             </a>
+            {% endblock %}
+            {% block logout_content %}
+            <a href="{% url 'logout' %}?next=/" class="top-menu">
+                <span class="glyphicon glyphicon-log-out">Logout</span>
+            </a>
+            <p class="a">Hello {{ user.username }}!</p>
+            {% endblock %}
+
         {% else %}
+            {% block password_reset %}
+            <a href="{% url 'password_reset' %}" class="top-menu">
+                <span class="glyphicon glyphicon-repeat">Reset</span>
+            </a>
+            {% endblock %}
             {% block signup_content %}
             <a href="{% url 'signup' %}" class="top-menu">
                 <p>Sign Up</p>
@@ -34,15 +75,20 @@
             </a>
             {% endblock %}
         {% endif %}
-        <h1><a href="/">Django Girls Blog</a></h1>
+        <h1><a href="/">PortFolio Homepage</a></h1>
     </div>
 
     <div class="content container">
         <div class="row">
             <div class="col-md-8">
-
                 {% block content %}
                 {% endblock %}
+                <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                <script type="text/javascript">
+                    $(function(){
+                        $.get('',
+                    });
+                </script>
             </div>
         </div>
     </div>

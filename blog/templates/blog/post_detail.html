@@ -2,16 +2,6 @@
 
 {% block title %}
     Hi
-<!--    <style>-->
-<!--        .post-map{-->
-<!--            height: 100%;-->
-<!--        }-->
-<!--        html, body{-->
-<!--            height: 100%;-->
-<!--            margin: 0;-->
-<!--            padding: 0;-->
-<!--        }-->
-<!--    </style>-->
 {% endblock %}
 {% block content %}
     <div class="post">
@@ -21,6 +11,9 @@
             </div>
         {% endif %}
         {% if user.is_authenticated %}
+            <div class="author">
+                {{ post.author }}
+            </div>
             <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}">
                 <span class="glyphicon glyphicon-pencil"></span>
             </a>

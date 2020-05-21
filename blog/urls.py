@@ -2,7 +2,11 @@ from django.conf.urls import url, include
 # from django.contrib.auth.views import LogoutView
 from . import views
 from django.contrib import admin
-from django.views.generic.base import TemplateView # new
+from django.views.generic.base import TemplateView  # new
+from django.contrib.auth.views import (
+    login, logout, password_reset, password_reset_done, password_reset_confirm,
+    password_reset_complete
+)
 
 urlpatterns = [
     url(r'^$', views.post_list, name='post_list'),
@@ -18,5 +22,29 @@ urlpatterns = [
     # When users have logged on to the site, go back to base.html.
     # url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^signup/', views.SignUp.as_view(), name='signup'),
+    url(r'^change-password/',
+        views.change_password,
+        name='change_password'),
     url(r'', TemplateView.as_view(template_name='base.html'), name='base'),
+
+    # Reset Password
+    # url(r'^post/password_reset/$', password_reset, {
+    #     'template_name': 'password_reset_form.html',
+    #     'post_reset_redirect': 'registration/password_reset_done.html',
+    #     'email_template_name': 'registration/password_reset_email.html'},
+    #     name='reset_password'),
+    #
+    # url(r'^post/password_reset_done/$', password_reset_done, {
+    #     'template_name': 'registration/password_reset_done.html'},
+    #     name='password_reset_done'),
+    #
+    # url(r'^post/reset/MQ/(?P<uidbd64>[0-9A-Za-z]+)-(?P<token>.+)/$', password_reset_confirm,
+    #     {'template_name': 'registration/password_reset_confirm.html',
+    #      'post_reset_redirect': 'registration/password_reset_complete'},
+    #     name='password_reset_confirm'),
+    #
+    # url(r'^post/reset/complete/$', password_reset_complete, {'template_name':
+    # 'registration/password_reset_complete.html'}, name='password_reset_complete'),
+
+    # url(r'^password_reset/$', views.password_reset),
 ]
